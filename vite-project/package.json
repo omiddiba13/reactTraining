@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/core": "^7.23.9",
     "bootstrap": "^5.3.3",
+    "immer": "^10.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1"
