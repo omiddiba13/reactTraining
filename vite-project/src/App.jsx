@@ -9,7 +9,9 @@ import Test1 from "./assets/s33/test1";
 import Test2 from "./assets/s33/Test2";
 import Products from"./assets/buy/Products"
 import { produce} from "immer";
-import Form from "./assets/componets/form";
+import Form from "./assets/componets/forms/form";
+import FormName from "./assets/componets/forms/form2";
+import Form3 from "./assets/componets/forms/form3";
 
 
 function App() {
@@ -170,6 +172,9 @@ const addQuantity = (q)=>{return q <10 ? q+1:q ;}
        <Form/>
       
 <hr />
+      <FormName/>
+      <hr />
+       <Form3/>
 
        <div className=" container ">
                   <div className="row"> 
