@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Products({ addProduct }) {
+export default function Products1({ addProduct }) {
   const data = [
     {
       id: 1,
@@ -88,7 +88,7 @@ export default function Products({ addProduct }) {
     <div className=" container col-xxl-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 ">
       <h2 className=" text-black text-center"> Products </h2>
       <div className=" row row-cols-xxl-4 row-cols-xl-4 row-cols-lg-3  row-cols-md-2 row-cols-sm-1  gap-1 ">
-        {product.map((product) => (
+        {product.map(product => (
           <div className="row g-1" key={product.id}>
             <div className="card  " style={{}}>
               <img
@@ -100,8 +100,7 @@ export default function Products({ addProduct }) {
                 <h4 className=" card-title">{product.productName}</h4>
                 <p
                   className="card-text overflow-y-scroll fs-5 "
-                  style={{ maxHeight: "4.5rem", overflowY: "auto" }}
-                >
+                  style={{ maxHeight: "4.5rem", overflowY: "auto" }}>
                   {product.productDescription}
                 </p>
                 <button
@@ -110,10 +109,9 @@ export default function Products({ addProduct }) {
                     addProduct(
                       product.id,
                       product.productName,
-                      product.productPrice
+                      product.productPrice,
                     );
-                  }}
-                >
+                  }}>
                   Add
                 </button>
               </div>

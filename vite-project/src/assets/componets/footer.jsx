@@ -8,5 +8,6 @@ export const Footer = () => {
       <h1>footer </h1>
       <Icons />
     </div>
+    
   );
 };

@@ -1,10 +1,13 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import { useForm } from 'react-hook-form'; 
+import { z } from 'zod';
 
 export default function Form3() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit , formState } = useForm();
+  const {errors} = formState
   const couhandlesmb = (data) => {
     console.log(data);
+      
   };
   return (
     <>
@@ -16,27 +19,41 @@ export default function Form3() {
           })}
         >
           <div className="mb-3 m-3 justify-content-center align-content-center ">
-            <label htmlFor="text" className="form-label">
+            <label
+              htmlFor="text"
+              className="form-label "
+            >
               Name
             </label>
             <input
               type="text"
               className="form-control"
               id="fullName"
-              {...register("fullName")}
+              {...register('fullName',{required:true ,minLength:5}) }
             />
+              {errors.fullName?.type === "required" && <div className='text-danger'>The Fullname is Required.</div>}
+                {errors.fullName?.type === "minLength" && (
+                  <div className='text-danger'>The Fullname must be at least 3 characters</div>
+                )}
+                
             <hr />
-            <label htmlFor="age" className="form-label">
+            <label
+              htmlFor="age"
+              className="form-label"
+            >
               Age
             </label>
             <input
               type="number"
               className="form-control"
               id="age"
-              {...register("age")}
+              {...register('age')}
             />
 
-            <button type="submit" className="btn btn-danger m-3 ">
+            <button
+              type="submit"
+              className="btn btn-danger m-3 "
+            >
               Submit
             </button>
           </div>
